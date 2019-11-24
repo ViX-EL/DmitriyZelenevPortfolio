@@ -13,17 +13,20 @@
 
 <body>
 
+	<div class="overlay">
+		<img class="overlayButton" id="overlayButtonLeft" src="images/arrow_left.png" >
+		<img class="overlayImg" id="overlayMagnifiedImg">
+		<img class="overlayButton" id="overlayButtonRight" src="images/arrow_right.png" >
+		<button class="closeOverlay"> X </button>
+		<div id="imgOrdinalNumber"> </div>
+	</div>
+
 	<div class="aboutProject">
 		<div class="title">
 		 	<p>Выпускная квалификационная работа - дипломная работа: "Генерация трёхмерных пространств с помощью библиотеки Open GL"</p>
 		</div>
-		<!-- <br> -->
+		<br>
 		<div class="text">
-			<div class="video">
-				<video width="340" height="195" controls="controls">
-					<source src="video/diplom.mp4">
-				</video>
-			</div>
 		 	<p>Приложение предназначено для визуализации в трёхмерном пространстве процедурно генерируемых структур и основано на обработчиках событий VCL Form и библиотеке OpenGL версии 1.</p>
 		 	<p>Разработанное конечное приложение для визуализации генерации трёхмерных пространств имеет 3 основные функции:</p>
 			<p>- Случайная генерация трёхмерного простого ландшафта с фиксированными размерами и наложением различных текстур в зависимости от высоты;</p> 
@@ -32,198 +35,73 @@
 			<p>В ходе выполнения выпускной квалификационной работы был разработан алгоритм процедурной генерации. 
 			На основе разработанных и исследованных алгоритмов спроектирована и реализована виртуальная картинная галерея с возможностью свободного перемещения в пространстве. Движение пользователя осуществляется с помощью стандартных устройств (клавиатура и мышь).
 			Результатом ВКР является законченный программный продукт, представляющий графическое приложение визуализирующее картинную галерею. Картинная галерея представлена в виде группы помещений связанных между собой порталами.</p>
-		</div>
-		<div id="carousel" class="carousel">
-			<img class="arrowLeft" id="#arrowLeft" src="images/arrow_left (2).png" width="50" height="50"> 
-			<div class="gallery">
-				<ul class="images">
-					<li class="image-container">
-					    <img class="minimized" src="images/menu1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/menu2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal_in_room.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images//portal_in_room2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal_in_room3.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal_in_room4.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/pictures.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/portal_on_landscape.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/landscape.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/passage_aloritm.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/passage_aloritm2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-				</ul>
+		</div>			
+		<div class="gallery">
+			<img class="magnifiedImg" id="magnifiedDiplomImg">
+			<video id="diplomVideo" preload="metadata" class="video" controls="controls">
+				<source src="video/diplom.mp4">
+			</video>
+			<div class="miniatures">
+				<img class="videoMiniature" id="diplomVideoMiniature" src="images/miniatureDiplom.png">
+			    <img class="diplomImg" src="images/menu1.png">
+			    <img class="diplomImg" src="images/menu2.png">
+			    <img class="diplomImg" src="images/portal_in_room.png">
+			    <img class="diplomImg" src="images/portal_in_room2.png">
+			    <img class="diplomImg" src="images/portal_in_room3.png">
+			    <img class="diplomImg" src="images/portal_in_room4.png">
+			    <img class="diplomImg" src="images/pictures.png">
+			    <img class="diplomImg" src="images/portal.png">
+			    <img class="diplomImg" src="images/portal2.png">
+			    <img class="diplomImg" src="images/portal_on_landscape.png">
+			    <img class="diplomImg" src="images/landscape.png">
+			    <img class="diplomImg" src="images/passage_aloritm.png">
+			    <img class="diplomImg" src="images/passage_aloritm2.png">
 			</div>
-			<img class="arrowRight" id="#arrowRight" src="images/arrow_right (2).png" width="50" height="50">
-		</div>
+		</div>	
 	</div>
 
 	<div class="aboutProject">
 		<div class="title">
-		 	GenEngineOpenGL3.3 - кроссплатформенный 2D/3D игровой движок для настольных и мобильных платформ, основанный на графической библиотеке OpenGL версии 3.3 и выше.
+		 	<p>GenEngineOpenGL3.3 - кроссплатформенный 2D/3D игровой движок для настольных и мобильных платформ, основанный на графической библиотеке OpenGL версии 3.3 и выше.</p>
 		</div>
 		<br>
-		<div class="videoArea">  
-			<div class="video">
-				<video width="300" height="230" controls="controls">
-					<source src="video/models_and_light.mp4">
-				</video>
-			</div>
-			<div class="clear"> </div>
-			<div class="video">
-				<video width="300" height="230" controls="controls">
-					<source src="video/texture_anim_and_light.mp4">
-				</video>
-			</div>
-			<div class="clear"> </div>
-			<div class="video">
-				<video width="300" height="155" controls="controls">
-					<source src="video/GenEngineOpenGL3.3.mp4">
-				</video>
-			</div>
-		</div>
 		<div class="text">
-		 	 В функционал движка будут добавлены инструменты процедурной генерации, а также инструменты для создания приложений дополненной реальности.
-		 	 На данный момент разработан и дорабытывается графический движок. В процессе разработки графического движка были разработаны и реализованы: 
+		 	<p>В функционал движка будут добавлены инструменты процедурной генерации, а также инструменты для создания приложений дополненной реальности.</p>
+		 	<p>На данный момент разработан и дорабытывается графический движок. В процессе разработки графического движка были разработаны и реализованы:</p>
 		</div>
-
-<!-- 		<div id="carousel" class="carousel">
-			<img class="arrowLeft" id="#arrowLeft" src="images/arrow_left (2).png" width="50" height="50"> 
-			<div class="gallery">
-				<ul class="images">
-					<li class="image-container">
-					    <img class="minimized" src="images/crates1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/lamp1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/light1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/light2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/light3.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/light4.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/lantern.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/nanosuit1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/nanosuit2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/reflections1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/reflections2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/nanoSuit3.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/emissionMap.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/emissionMap2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/gui1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/transformations1.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-					<li class="image-container">
-					    <img class="minimized" src="images/transformations2.png" width="180" height="120">
-					    <div class="after" title="Увеличить"> <img src="images/zoom.png"> </div>
-					</li>
-				</ul>
-			</div>
-			<img class="arrowRight" id="#arrowRight" src="images/arrow_right (2).png" width="50" height="50">
-		</div> -->
-	<div class="imageBox">
-		<img class="minimized" src="images/crates1.png" width="180" height="120">
-		<img class="minimized" src="images/lamp1.png" width="180" height="120">
-		<img class="minimized" src="images/light1.png" width="180" height="120">
-		<img class="minimized" src="images/light2.png" width="180" height="120">
-		<img class="minimized" src="images/light3.png" width="180" height="120">
-		<img class="minimized" src="images/light4.png" width="180" height="120">
-		<img class="minimized" src="images/lantern.png" width="180" height="120">
-		<img class="minimized" src="images/nanosuit1.png" width="180" height="120">
-		<img class="minimized" src="images/nanosuit2.png" width="180" height="120">
-		<img class="minimized" src="images/reflections1.png" width="180" height="120">
-		<img class="minimized" src="images/reflections2.png" width="180" height="120">
-		<img class="minimized" src="images/nanoSuit3.png" width="180" height="120">
-		<img class="minimized" src="images/emissionMap.png" width="180" height="120">
-		<img class="minimized" src="images/emissionMap2.png" width="180" height="120">
-		<img class="minimized" src="images/gui1.png" width="180" height="120">
-		<img class="minimized" src="images/transformations1.png" width="180" height="120">
-		<img class="minimized" src="images/transformations2.png" width="180" height="120">
-	</div>
+		<br>
+		<div class="gallery">
+			<img class="magnifiedImg" id="magnifiedEngineImg">
+			<video id="engineVideo" class="video" preload="metadata" controls="controls">
+				<source src="video/models_and_light.mp4">
+			</video>
+			<div class="miniatures"> 
+				<img class="videoMiniature" id="miniatureModelsAndLight" src="images/miniatureModels_and_light.png">
+				<img class="videoMiniature" id="miniatureTextureAnimAndLight" src="images/miniatureTexture_anim_and_light.png">
+				<img class="videoMiniature" id="miniatureGenEngineOpenGL33" src="images/miniatureGenEngineOpenGL3.3.png">
+			    <img class="engineImg" src="images/crates1.png">
+			    <img class="engineImg" src="images/lamp1.png">
+			    <img class="engineImg" src="images/light1.png">
+			    <img class="engineImg" src="images/light2.png">
+			    <img class="engineImg" src="images/light3.png">
+			    <img class="engineImg" src="images/light4.png">
+			    <img class="engineImg" src="images/lantern.png">
+			    <img class="engineImg" src="images/nanosuit1.png">
+			    <img class="engineImg" src="images/nanosuit2.png">
+			    <img class="engineImg" src="images/reflections1.png">
+			    <img class="engineImg" src="images/reflections2.png">
+			    <img class="engineImg" src="images/nanoSuit3.png">
+			    <img class="engineImg" src="images/emissionMap.png">
+			    <img class="engineImg" src="images/emissionMap2.png">
+			    <img class="engineImg" src="images/gui1.png">
+			    <img class="engineImg" src="images/transformations1.png">
+			    <img class="engineImg" src="images/transformations2.png">
+			</div>	
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/carousel-script.js"></script>
-	<script src="js/magnify_img-script.js"></script>
+	<script src="js/select_img-script.js"></script>
 
 </body>
 
