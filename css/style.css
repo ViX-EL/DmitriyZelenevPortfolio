@@ -8,13 +8,10 @@ body * {
 	outline: none;
 }
 
-video{
-	float: right;
-}
-
 p {
 	text-indent: 0;
 	margin:0.3em;
+	margin-left: 20px;
 }
 
 .aboutProject {
@@ -47,175 +44,145 @@ p {
 	position: relative;
 	font-size: 1em;
 	color: #444;
-	text-indent: 20px;
 	display: inline;
 }
 
-.video {
-	position: relative;
-	align-self: stretch;
-	display: block;
-	padding: 7px 12px;
-}
-
-.clear{
-	clear: both;
-}
-
-.videoArea {
-	display: block;
-	float: right;
-	margin-left: 3px;
-	margin-bottom: 16px;
-}
-
-.carousel {
-	display: flex;
-	height: 100%;
-	position: relative;
-	width: 88%;
-	margin: 15px auto;
-	margin-bottom: 0;
- }
-
 .gallery {
-  width: 920px;
-  overflow: hidden;
-  margin-left: 10px;
-  margin-right: 10px;
+	margin: 30px auto;
+    text-align: center;
+	height: 50%;
+	width: 70%;
 }
 
-.gallery ul {
-  height: 130px;
-  width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: margin-left 250ms;
-  font-size: 0;
-}
-
-.gallery li {
-  display: inline-block;
-}
-
-.arrowRight, .arrowLeft {
+.miniatures {
 	position: relative;
-	display: block;
-	z-index: 4;
-	margin-top: 35px;
-	border-radius: 25px;
-    border: 1px solid gray;
-    background: #ddd;
+	display: flex;
+	margin-top: 2%;
+	overflow-x: scroll; 
+	overflow-y: hidden;
+	white-space: nowrap;  
+	word-wrap: normal; 
+	margin-top: 8px;
+	height: 100%;
+	width: 100%;
 }
 
-.arrowRight:hover, .arrowLeft:hover {
-	background: rgba(68, 84, 100, 0.85);
-	cursor: pointer;
-}
-
-.image-container {
-    position: relative;
+.miniatures img {
+	position: relative;
     display: inline-block;
-    width: 180px;
-    height: 120px;
-    margin: 2px;
-}
-.image-container .after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    color: #FFF;
+    margin: 4px;
+	width: 180px;
+	height: 100px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.image-container .after img {
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    width: 30%;
-    height: 30%;
-    display: none;
-    color: #FFF;
-}
-
-.image-container:hover .after img {
-   display: block;
-}
-
-.image-container:hover .after {
-   display: block;
-   background: rgba(0, 0, 0, .6);
-   cursor: pointer;
-}
-
-.minimized:hover { 
+.miniatures img:hover {
 	cursor: pointer;
 }
 
-.minimized {
-	display: inline-block;
-	margin: 2px;
+.videoMiniature {
+	position: relative;
+    display: inline-block;
+    margin: 4px;
+	width: 180px;
+	height: 100px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.imageBox {
-	margin: 8px;
+.video {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
+	position: relative;
 }
 
-#magnify {
-  display: none;
-  position: fixed;
-  max-width: 70%;
-  height: auto;
-  z-index: 9999;
+.magnifiedImg {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: none;
+	position: relative;
 }
- 
-#magnify img {
-  width: 100%;
+
+.magnifiedImg:hover {
+	cursor: pointer;
 }
- 
-#overlay {
-  display: none;
- 
-  background: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-  z-index: 9990;
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+    left: 0;
+	background-color: rgba(1,1,1 ,0.70);
+	position: fixed;
+	z-index: 2;
+	display: none;
 }
- 
-#close-popup {
-  width: 30px;
-  height: 30px;
- 
-  background: #FFFFFF;
-  border: 1px solid #AFAFAF;
-  border-radius: 15px;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+
+.overlayImg {
+	width: 80%;
+	height: 80%;
+	display: block;
+    top: 10%;
+    left: 10%;
+	position: fixed;
+	z-index: 3;
 }
- 
-#close-popup i {
-  width: 30px;
-  height: 30px;
-  background: url(https://codernote.ru/files/cross.png) no-repeat center center;
-  background-size: 16px 16px;
-  display: block;
+
+.closeOverlay {
+	width: 35px;
+	height: 35px;
+	display: block;
+	border-radius: 20px;
+	position: absolute;
+	top: 11.5%;
+    left: 87%;
+    z-index: 4;
 }
- 
-@keyframes rota {
- 25% { transform: rotate(360deg); }
+
+.closeOverlay:hover{
+	cursor: pointer;
+	background-color: #928C8C;
 }
- 
-#close-popup:hover {
-  animation: rota 4s infinite normal;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+
+.overlayButton {
+	width: 50px;
+	height: 100px;
+	background-color: #ddd;
+	display: block;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-radius: 30px;
+	position: absolute;
+    z-index: 3;
+	border-style: solid;
+	border-color: #252222;
+	border-width: 2px;
+}
+
+.overlayButton:hover {
+	cursor: pointer;
+	background-color: #928C8C;
+}
+
+#overlayButtonLeft {
+	top: 46%;
+    left: 5.6%;
+}
+
+#overlayButtonRight {
+	top: 46%;
+    left: 91%;
+}
+
+#imgOrdinalNumber {
+	position: absolute;
+	top: 91%;
+    left: 48.5%;
+    color: #FFFFFF;
 }
